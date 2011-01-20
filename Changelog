@@ -2,6 +2,8 @@
  Nagios AS400 Plugin 
 *********************
 
+------------------------------------
+
 0.11
 -----------
 * added checks for errors on login, and for invalid queue name
@@ -90,27 +92,45 @@ To make things language independent:
 
 *Created language definitions for GERMAN
 
-0.19 by Joerg_M
+0.18.01 from Shao-Pin, Cheng
+-----------
+*Added check Expired password
+*Added check DB utilization
+
+0.18.02 from Shao-Pin, Cheng
+-----------
+*Added check QCMN JOB Transaction timeout. (Only check for CUB customize CLP result ) 
+*Added debug check logout "Job ending immediately."
+*Added check DISK Status.
+
+0.18.03 from Shao-Pin, Cheng
+-----------
+*Modified the DSPMSG, see the last message and the number of message needing a reply.
+
+0.18.04 from Shao-Pin, Cheng
+-----------
+*Added check single ASP used. 
+*Added check CPUC, when use  Dynamic hardware  resource, CPU load may need consider Current processing capacity .
+
+0.18.05 from Shao-Pin, Cheng
+-----------
+* Fix some German language definitions, thank Stefan Hlustik
+
+0.19 by Joerg_M based on 0.18
 -----------
 *spanish Translation for Status 'Active' added
 *Termination Token '[0m' in Method 'logout (';53H' only sent in standard SignOn-Screen)
 *Implementation of Variable CJS = "Check for Job Status"  
 
-0.20---------
+0.20
+---------
 
-merged 0.19 and 0.18.05.3 from Shao-Pin, Cheng
+by Stefan Hlustik
 
-changes made by Shao-Pin, Cheng (he developed on base of 0.18)
-*Added check Expired password
-*Added check DB utilization
-*Added check QCMN JOB Transaction timeout. (Only check for CUB customize CLP result ) 
-*Added debug check logout "Job ending immediately."
-*Added check DISK Status.
-*Modified the DSPMSG, display the latest message and the number of messages needing a reply.
-*Added check single ASP used. 
-*Added check CPUC, when use  Dynamic hardware  resource, CPU load may need consider Current processing capacity .
-*Fixed some German language definitions
+merged 0.19 and 0.18.05.3
 
-changes by Stefan Hlustik
-*Fixed the parsing of DSPMSG
-*Fixed some parsing 
+*added failsave mechanism to parsing of DSPMSG when message does not match expected format
+*changed DBFAULT parsing Offsets 
+*changed printUsageDetail so that it shows where -c and -w are compulsory
+
+
