@@ -11,5 +11,3 @@ detect missing -c and -w values when they are needed and provide the user a mean
 
 detect missing librarys (QCMN, ASP, CPUC)
 
-DBFAULT currently not working with german environment
-

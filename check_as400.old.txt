@@ -1,7 +1,0 @@
-#!/bin/sh
-NAGIOS_PATH=`dirname $0`
-USER=`cat $NAGIOS_PATH/.as400 |grep -e USER | cut -d = -f 2`
-PASS=`cat $NAGIOS_PATH/.as400 |grep -e PASS | cut -d = -f 2`
-JAVA_START="/usr/lib/java/bin/java -cp $NAGIOS_PATH" 
-
-$JAVA_START check_as400 -u $USER -p $PASS $* 
